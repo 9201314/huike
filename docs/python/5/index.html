@@ -1,0 +1,218 @@
+<!doctype html><html lang=en dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>【第5周笔记】函数和代码复用 | Python | Hui.Ke</title><meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=https://hui.ke/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=https://hui.ke/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script>
+<link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/vs.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/ini.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/json.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/sql.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/x86asm.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/xml.min.js crossorigin></script>
+<link rel=stylesheet href=https://hui.ke/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=https://lib.baomitu.com/font-awesome/6.4.2/js/all.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script>
+<link rel=icon type=image/png sizes=32x32 href=https://hui.ke/icon_hub7ca0b5404c6d576559b2bd22c64b0e5_2009_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=https://hui.ke/icon_hub7ca0b5404c6d576559b2bd22c64b0e5_2009_180x180_fill_box_center_3.png><meta name=description content="  课程笔记和选择题"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Docs","item":"https://hui.ke/docs/"},{"@type":"ListItem","position":2,"name":"Python","item":"https://hui.ke/docs/python/"},{"@type":"ListItem","position":3,"name":"【第5周笔记】函数和代码复用","item":"https://hui.ke/docs/python/5/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://hui.ke/docs/python/5/"},"headline":"【第5周笔记】函数和代码复用 | Python | Hui.Ke","datePublished":"2022-04-11T11:27:42+08:00","dateModified":"2022-04-11T11:27:42+08:00","wordCount":3146,"author":{"@type":"Person","name":"Hui.Ke"},"publisher":{"@type":"Person","name":"Hui.Ke","logo":{"@type":"ImageObject","url":"https://hui.ke/icon.png"}},"description":"\u003cp\u003e  课程笔记和选择题\u003c\/p\u003e"}</script><meta property="og:title" content="【第5周笔记】函数和代码复用 | Python | Hui.Ke"><meta property="og:type" content="article"><meta property="og:image" content="https://hui.ke/icon.png"><meta property="og:url" content="https://hui.ke/docs/python/5/"><meta property="og:description" content="  课程笔记和选择题"><meta property="og:locale" content="en"><meta property="og:site_name" content="Hui.Ke"><meta property="article:published_time" content="2022-04-11T11:27:42+08:00"><meta property="article:modified_time" content="2022-04-11T11:27:42+08:00"><meta property="article:section" content="docs"><meta property="article:tag" content="函数"><meta property="article:tag" content="递归"><meta property="og:see_also" content="https://hui.ke/docs/python/20/"><meta property="og:see_also" content="https://hui.ke/docs/python/10/"><meta property="og:see_also" content="https://hui.ke/docs/python/19/"><meta property="og:see_also" content="https://hui.ke/docs/python/9/"><meta property="og:see_also" content="https://hui.ke/docs/python/18/"><meta property="og:see_also" content="https://hui.ke/docs/python/8/"><meta property="og:see_also" content="https://hui.ke/docs/python/17/"><meta property="og:see_also" content="https://hui.ke/docs/python/7/"><meta property="og:see_also" content="https://hui.ke/docs/python/16/"><meta property="og:see_also" content="https://hui.ke/docs/python/6/"><meta property="og:see_also" content="https://hui.ke/docs/python/15/"><meta property="og:see_also" content="https://hui.ke/docs/python/14/"><meta property="og:see_also" content="https://hui.ke/docs/python/4/"><meta property="og:see_also" content="https://hui.ke/docs/python/13/"><meta property="og:see_also" content="https://hui.ke/docs/python/3/"><meta property="og:see_also" content="https://hui.ke/docs/python/12/"><meta property="og:see_also" content="https://hui.ke/docs/python/2/"><meta property="og:see_also" content="https://hui.ke/docs/python/11/"><meta property="og:see_also" content="https://hui.ke/docs/python/1/"><script>!function(e){"use strict";!function(){var i,s=window,o=document,a=e,c="".concat("https:"===o.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=o.createElement("script"),r=o.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",a.d=n,i=function(){s.LA.ids.push(a)},s.LA?s.LA.ids&&i():(s.LA=e,s.LA.ids=[],i()),r.parentNode.insertBefore(n,r)}()}({id:"Jgb8aUbG5e3rqhrs",ck:"Jgb8aUbG5e3rqhrs",autoTrack:!0,hashMode:!0})</script><script>!function(e,t,n,s){var o=t.createElement("script"),i=t.getElementsByTagName("script")[0];o.type="text/javascript",o.crossorigin=!0,o.onload=function(){(new e[s].Monitor).init({id:"K9RugzpZqP1AhgMc",sendSuspicious:!0,sendSpaPv:!0})},i.parentNode.insertBefore(o,i),o.src=n}(window,document,"https://sdk.51.la/perf/js-sdk-perf.min.js","LingQue")</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268471087790880" crossorigin=anonymous></script><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">Hui.Ke</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/posts/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Posts</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">Docs</a>
+<a href=/categories/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Categories</a>
+<a href=/series/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Series</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Tags</a>
+<a href=/love/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Love</a>
+<a href=/about/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">About</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>Light</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>Dark</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>Auto</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>Table of Contents</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=https://hui.ke/docs/python/>Python</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/20/>期末测验</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/10/>【第9+周笔记】全课程总结与学习展望</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/19/>【第9周程序】计算生态纵览</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/9/>【第9周笔记】计算生态纵览</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/18/>【第8周程序】程序设计方法学</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/8/>【第8周笔记】程序设计方法学</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/17/>【第7周程序】文件和数据格式化</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/7/>【第7周笔记】文件和数据格式化</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/16/>【第6周程序】组合数据类型</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/6/>【第6周笔记】组合数据类型</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/15/>【第5周程序】函数和代码复用</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=https://hui.ke/docs/python/5/>【第5周笔记】函数和代码复用</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/14/>【第4周程序】程序的控制结构</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/4/>【第4周笔记】程序的控制结构</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/13/>【第3周程序】基本数据类型</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/3/>【第3周笔记】基本数据类型</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/12/>【第2周程序】Python 基本图形绘制</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/2/>【第2周笔记】Python 基本图形绘制</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/11/>【第1周程序】Python 基本语法元素</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/1/>【第1周笔记】Python 基本语法元素</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>【第5周笔记】函数和代码复用</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2022-04-11</span></div><div class="me-6 my-2"><i class="fa-solid fa-pen-to-square me-1"></i>
+<span>2022-04-11</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>7 min read</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=https://hui.ke/categories/it/ class=hover:text-eureka>IT</a></div><div class="me-6 my-2"><i class="fas fa-th-list me-1"></i>
+<a href=https://hui.ke/series/python/ class=hover:text-eureka>Python</a></div><div class="me-6 my-2"><i class="fa-solid fa-eye me-1"></i>
+<span id=busuanzi_value_page_pv><i class="fa fa-spinner fa-spin"></i></span> Hits</div></div><p>  课程笔记和选择题</p><h2 id=notes>notes</h2><h3 id=函数的定义>函数的定义</h3><p>  函数是一段代码的表示</p><p>  函数是一段具有特定功能的、可重用的语句组</p><p>  函数是一种功能的抽象，一般函数表达特定功能</p><p>  两个作用：降低编程难度和代码复用</p><pre><code class=language-python>def &lt;函数名&gt;(&lt;参数(0 个或多个)&gt;) :     # 函数可以有参数，也可以没有，但必须保留括号
+    &lt;函数体&gt;
+    return &lt;返回值&gt;
+</code></pre><p>  函数定义时，所指定的参数是一种占位符</p><p>  函数定义后，如果不经过调用，不会被执行</p><p>  函数定义时，参数是输入、函数体是处理、结果是输出（IPO）</p><h3 id=函数的调用>函数的调用</h3><p>  调用是运行函数代码的方式</p><p>  调用时要给出实际参数</p><p>  实际参数替换定义中的参数</p><p>  函数调用后得到返回值</p><div text-align:center><img src=/images/函数的调用过程.webp></a></div><h3 id=可选参数传递>可选参数传递</h3><p>  函数定义时可以为某些参数指定默认值，构成可选参数</p><pre><code class=language-python>def &lt;函数名&gt;(&lt;非可选参数&gt;, &lt;可选参数&gt;) :
+    &lt;函数体&gt;
+    return &lt;返回值&gt;
+
+# 计算 n!//m
+def fact(n, m=1) :     # m=1 为可选参数
+    s = 1
+    for i in range(1, n=1) :
+        s *= i
+    return s//m
+
+# 举例
+&gt;&gt;&gt; fact(10)
+
+# 输出
+3628800
+
+# 举例
+&gt;&gt;&gt; fact(10,5)
+
+# 输出
+725760
+</code></pre><h3 id=可变参数传递>可变参数传递</h3><p>  函数定义时可以设计可变数量参数，既不确定参数总数量</p><pre><code class=language-python>def &lt;函数名&gt;(&lt;参数&gt;, *b) :
+    &lt;函数体&gt;
+    return &lt;返回值&gt;
+
+# 计算 n! 乘数
+def fact(n, *b) :     # *b 为可变参数
+    s = 1
+    for i in range(1, n+1) :
+        s *= i
+    for item in b :
+        s *= item
+    return s
+
+# 举例
+&gt;&gt;&gt; fact(10,3)
+
+# 输出
+10886400
+
+# 举例
+&gt;&gt;&gt; fact(10,3,5,8)
+
+# 输出
+435456000
+</code></pre><h3 id=参数传递的两种方式>参数传递的两种方式</h3><p>  函数调用时，参数可以按照位置或名称方式传递</p><pre><code class=language-python>def fact(n, m=1) :
+    s = 1
+    for i in range(1, n+1) :
+        s *= i
+    return s//m
+
+# 举例
+&gt;&gt;&gt; fact(10,5)     # 位置传递
+
+# 输出
+725760
+
+# 举例
+&gt;&gt;&gt; fact(m=5,n=10)     # 名称传递
+
+# 输出
+725760
+</code></pre><h3 id=函数的返回值>函数的返回值</h3><p>函数可以返回 0 个或多个结果</p><p>return 保留字用来传递返回值</p><p>函数可以有返回值，也可以没有，可以有 return，也可以没有</p><p>return 可以传递 0 个返回值，也可以传递任意多个返回值</p><p>函数调用时，参数可以按照位置或名称方式传递</p><h3 id=局部变量和全局变量>局部变量和全局变量</h3><p>  局部变量和全局变量是不同变量</p><p>  局部变量是函数内部的占位符，与全局变量可能重名但不同</p><pre><code class=language-python>n, s = 10, 100
+def fact(n) :
+    s = 1     # fact() 函数中 s 是局部变量，与全局变量 s 不同
+    for i in range(11 n+1) :
+        s *= i
+    return s     # 此处局部变量 s 是 3628800
+print(fact(n), s)     # 此处全局变量 s 是 100
+</code></pre><p>  函数运算结束后，局部变量被释放</p><p>  可以使用 global 保留字在函数内部使用全局变量</p><pre><code class=language-python>n, s = 10, 100
+def fact(n) :
+    global s     # fact() 函数中使用 global 保留字声明：此处 s 是全局变量 s
+    for i in range(1, n+1) :
+        s *= i
+    return s     # 此处 s 指全局变量 s，值为 362880000
+print(fact(n), s)     # 此处全局变量 s 被函数修改，值同为 362880000
+</code></pre><p>  局部变量为组合数据类型且未创建，等同于全局变量</p><pre><code class=language-python>ls = [&quot;F&quot;, &quot;f&quot;]     # 通过使用 [] 真实创建了一个全局变量列表 ls
+def func(a) :
+    ls.append(a)     # 此处 ls 是列表类型，未真实创建，则等同于全局变量
+    return
+func(&quot;C&quot;)     # 全局变量 ls 被修改
+print(ls)     # 运行结果为：['F', 'f', 'C']
+
+ls = [&quot;F&quot;, &quot;f&quot;]     # 通过使用 [] 真实创建了一个全局变量列表 ls
+def func(a) :
+    ls = []     # 此处 ls 是列表类型，真实创建，ls 是局部变量
+    ls.append(a)
+    return
+func(&quot;C&quot;)     # 局部变量 ls 被修改
+print(ls)     # 运行结果为：['F', 'f']
+</code></pre><h3 id=lambda-函数>lambda 函数</h3><p>lambda 函数返回函数名作为结果</p><p>lambda 函数是一种匿名函数，即没有名字的函数</p><p>使用 lambda 保留字定义，函数名是返回结果</p><p>lambda 函数用于定义简单的、能够在一行内表示的函数</p><pre><code class=language-python>&lt;函数名&gt; = lambda &lt;参数&gt;: &lt;表达式&gt;
+
+# 等价于
+def &lt;函数名&gt;(&lt;参数&gt;) :
+    &lt;函数体&gt;
+    return &lt;返回值&gt;
+
+# 举例
+&gt;&gt;&gt; f = lambda x, y : x + y
+&gt;&gt;&gt; f(10, 15)
+
+# 输出
+25
+
+# 举例
+&gt;&gt;&gt; f = lambda : &quot;lambda函数&quot;
+&gt;&gt;&gt; print(f())
+
+# 输出
+lambda函数
+</code></pre><blockquote><p>谨慎使用 lambda 函数</p></blockquote><p>lambda 函数主要用作一些特定函数或方法的参数</p><p>lambda 函数有一些固定使用方式，建议逐步掌握</p><blockquote><p>一般情况，建议使用 def 定义的普通函数</p></blockquote><h3 id=代码复用>代码复用</h3><p>  把代码当成资源进行抽象</p><p>  代码资源化：程序代码是一种用来表达计算的"资源"</p><p>  代码抽象化：使用函数等方法对代码赋予更高级别的定义</p><p>  代码复用：同一份代码在需要时可以被重复使用</p><p>  “函数”和“对象”是代码复用的两种主要形式</p><ol><li>函数：将代码命名，在代码层建立了初步抽象</li><li>对象：属性和方法，<code>&lt;a>.&lt;b> 和 &lt;a>.&lt;b>()</code>，在函数之上再次组织进行抽象</li></ol><h3 id=模块化设计>模块化设计</h3><p>  通过函数或对象封装将程序划分为模块及模块间的表达</p><p>  具体包括：主程序、子程序和子程序间关系</p><p>  分而治之：一种分而治之、分层抽象、体系化的设计思想</p><p>  紧耦合：两个部分之间交流很多，无法独立存在</p><p>  松耦合：两个部分之间交流较少，可以独立存在</p><p>  模块内部紧耦合、模块之间松耦</p><h3 id=递归的定义>递归的定义</h3><p>  函数定义中调用函数自身的方式</p><p>  两个关键特征</p><ol><li><p>链条：计算过程存在递归链条</p></li><li><p>基例：存在一个或多个不需要再次递归的基例</p></li><li><p>类似数学归纳法</p><ol><li>证明当 n 取第一个值 $n_0$ 时命题成立</li><li>假设当 $n_k$ 时命题成立，证明当 $n=n_{k+1}$ 时命题也成立</li></ol></li><li><p>递归是数学归纳法思维的编程体现</p></li></ol><h3 id=递归的实现>递归的实现</h3><p>  函数 + 分支语句</p><p>  递归本身是一个函数，需要函数定义方式描述</p><p>  函数内部，采用分支语句对输入参数进行判断</p><p>  基例和链条，分别编写对应代码</p><h3 id=函数递归实例解析>函数递归实例解析</h3><h4 id=字符串反转>字符串反转</h4><p>  将字符串 s 反转后输出，即 s[::-1]</p><pre><code class=language-python>def rvs(s) :
+    if s == &quot;&quot; :
+        return s
+    else :
+        return rvs(s[1:])+s[0]
+</code></pre><h4 id=斐波那契数列>斐波那契数列</h4><p>F(n) = F(n-1) + F(n-2)</p><pre><code class=language-python>def f(n) :
+    if n == 1 or n == 2 :
+        return 1
+    else :
+        return f(n-1) + f(n-2)
+</code></pre><h4 id=汉诺塔>汉诺塔</h4><pre><code class=language-python>count = 0
+def hanoi(n, src, dst, mid) :
+    global count
+    if n == 1 :
+        print(&quot;{}:{}-&gt;{}&quot;.format(1,src,dst))
+        count += 1
+    else :
+        hanoi(n-1, src, mid, dst)
+        print(&quot;{}:{}-&gt;{}&quot;.format(n,src,dst))
+        count += 1
+        hanoi(n-1, mid, dst, src)
+</code></pre><h3 id=pyinstaller-库概述>PyInstaller 库概述</h3><p>  将.py源代码转换成无需源代码的可执行文件</p><blockquote><p>PyInstaller 库是第三方库</p></blockquote><p>  第三方库：使用前需要额外安装</p><p>  安装第三方库需要使用 pip 工具</p><pre><code class=language-python>pip install pyinstaller
+
+# 简单的使用
+pyinstaller -F &lt;文件名.py&gt;
+
+# 使用举例
+pyinstaller -i curve.ico -F SevenDigitsDrawV2.py
+</code></pre><p>PyInstaller 库常用参数</p><table><thead><tr><th style=text-align:left>参数</th><th style=text-align:left>描述</th></tr></thead><tbody><tr><td style=text-align:left>-h</td><td style=text-align:left>查看帮助</td></tr><tr><td style=text-align:left>&ndash;clean</td><td style=text-align:left>清理打包过程中的临时文件</td></tr><tr><td style=text-align:left>-D, &ndash;onedir</td><td style=text-align:left>默认值，生成 dist 文件夹</td></tr><tr><td style=text-align:left>-F, &ndash;onefile</td><td style=text-align:left>在 dist 文件夹中生成独立的打包文件</td></tr><tr><td style=text-align:left>-i &lt;图标文件名.ico></td><td style=text-align:left>指定打包程序使用的图标（icon）文件</td></tr></tbody></table><h2 id=测验-5>测验 5</h2><ol><li><p>以下选项不是函数作用的是：A</p><p>A. 提高代码执行速度</p><p>B. 降低编程复杂度</p><p>C. 增强代码可读性</p><p>D. 复用代码</p></li></ol><ul><li>函数不能直接提高代码执行速度。</li></ul><ol start=2><li>下列程序的输出结果为：C</li></ol><pre><code class=language-python>def f(a,b) :
+    a=4
+    return a+b
+def main() :
+    a=5
+    b=6
+    print(f(a,b),a+b)
+main()
+</code></pre><pre><code>A. 11  11
+
+B. 11  10
+
+C. 10  11
+
+D. 10  10
+</code></pre><ul><li>这里没有全局变量，都是函数局部变量的运算。</li></ul><ol start=3><li>以下关于 Python 函数说法错误的是：B</li></ol><pre><code class=language-python>def func(a,b) :
+    c=a**2+b
+    b=a
+    return c
+a=10
+b=100
+c=func(a,b)+a
+</code></pre><pre><code>A. 执行该函数后，变量 a 的值为 10
+
+B. 执行该函数后，变量 c 的值为 200
+
+C. 执行该函数后，变量 b 的值为 100
+
+D. 该函数名称为 func
+</code></pre><ul><li>a, b 为全局变量，请在 IDLE 中执行代码观察结果。</li></ul><ol start=4><li><p>以下关于函数调用描述正确的是：D</p><p>A. 函数和调用只能发生在同一个文件中</p><p>B. 函数在调用前不需要定义，拿来即用就好</p><p>C. Python 内置函数调用前需要引用相应的库</p><p>D. 自定义函数调用前必须定义</p></li></ol><ul><li><p>函数调用前必须已经存在函数定义，否则无法执行。</p></li><li><p>Python 内置函数直接使用，不需要引用任何模块。</p></li></ul><ol start=5><li><p>以下关于模块化设计描述错误的是：D</p><p>A. 模块间关系尽可能简单，模块之间耦合度低</p><p>B. 高耦合度的特点是复用较为困难</p><p>C. 应尽可能合理划分功能块，功能块内部耦合度高</p><p>D. 应尽可能合理划分功能块，功能块内部耦合度低</p></li></ol><ul><li>模块内高耦合、模块间低耦合。</li></ul><ol start=6><li><p>以下对递归描述错误的是：B</p><p>A. 一定要有基例</p><p>B. 执行效率高</p><p>C. 书写简单</p><p>D. 递归程序都可以有非递归编写方法</p></li></ol><ul><li><p>递归不提高程序执行效率。</p></li><li><p>任何递归程序都可以通过堆栈或队列变成非递归程序（这是程序的高级应用）。</p></li></ul><ol start=7><li><p>以下关于函数说法错误的是：B</p><p>A. 函数通过函数名来调用</p><p>B. 对函数的使用必须了解其内部实现原理</p><p>C. 函数是一段具有特定功能的、可重用的语句组</p><p>D. 函数可以看做是一段具有名字的子程序</p></li></ol><ul><li>调用函数不需要知道函数内部实现原理，只需要知道调用方法（即接口）即可。</li></ul><ol start=8><li><p>哪个选项对于函数的定义是错误的？C</p><p>A. def vfunc(a,b):</p><p>B. def vfunc(a,*b):</p><p>C. def vfunc(*a,b):</p><p>D. def vfunc(a,b=2):</p></li></ol><ul><li>def vfunc(*a, b) 是错误的定义：*a表示可变参数，可变参数只能放在函数参数的最后。</li></ul><ol start=9><li><p>关于 return 语句，以下选项描述正确的是：A</p><p>A. 函数可以没有return语句</p><p>B. 函数必须有一个return语句</p><p>C. return只能返回一个值</p><p>D. 函数中最多只有一个return语句</p></li></ol><ul><li>函数可以包含 0 个或多个 return 语句</li></ul><ol start=10><li><p>以下关于递归函数基例的说法错误的是：A</p><p>A. 每个递归函数都只能有一个基例</p><p>B. 递归函数的基例决定递归的深度</p><p>C. 递归函数的基例不再进行递归</p><p>D. 递归函数必须有基例</p></li></ol><ul><li>每个递归函数至少存在一个基例，但可能存在多个基例。</li></ul></article><div class=my-4><a href=https://hui.ke/tags/%E5%87%BD%E6%95%B0/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#函数</a>
+<a href=https://hui.ke/tags/%E9%80%92%E5%BD%92/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#递归</a></div><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=https://hui.ke/authors/hui.ke/ class="md:me-4 text-primary-text h-24 w-24"><img src=https://hui.ke/bagua.webp class="bg-primary-bg w-full rounded-full" alt=Avatar></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=https://hui.ke/authors/hui.ke/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>Hui.Ke</h3></a><span class="block pb-2">❤ Cyber Security | Safety is a priority.</span>
+<a href=mailto:3199731997@qq.com class=me-2><i class="fas fa-envelope"></i></a>
+<a href="https://wpa.qq.com/msgrd?v=3&amp;uin=3199731997" class=me-2><i class="fab fa-qq"></i></a>
+<a href=/images/anquanyunying.webp class=me-2><i class="fab fa-weixin"></i></a></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">Previous</span>
+<a href=https://hui.ke/docs/python/15/ class=block>【第5周程序】函数和代码复用</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">Next</span>
+<a href=https://hui.ke/docs/python/14/ class=block>【第4周程序】程序的控制结构</a></div></div><div id=valine-comments class=mt-4></div><script defer src=https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js integrity=sha384-e0+DNUCJo75aOAzHQbFWYBCM9/S4f0BhRJXvEgbE3mMS85RM20MSSGStHuNdY2QK crossorigin></script>
+<script>document.addEventListener("DOMContentLoaded",function(){new Valine({el:"#valine-comments",appId:"BQnVqWIiq78AdqwyhvBVAa3y-MdYXbMMI",appKey:"RKg5By312YjM8rU6WkkfK9IN",recordIP:"true",serverURLs:"https://l.hui.ke",visitor:"true"})})</script></div><div class="hidden lg:block lg:w-1/4"><div class="bg-secondary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>On This Page</h3></div><div class="sticky-toc
+border-s
+hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#notes>notes</a><ul><li><a href=#函数的定义>函数的定义</a></li><li><a href=#函数的调用>函数的调用</a></li><li><a href=#可选参数传递>可选参数传递</a></li><li><a href=#可变参数传递>可变参数传递</a></li><li><a href=#参数传递的两种方式>参数传递的两种方式</a></li><li><a href=#函数的返回值>函数的返回值</a></li><li><a href=#局部变量和全局变量>局部变量和全局变量</a></li><li><a href=#lambda-函数>lambda 函数</a></li><li><a href=#代码复用>代码复用</a></li><li><a href=#模块化设计>模块化设计</a></li><li><a href=#递归的定义>递归的定义</a></li><li><a href=#递归的实现>递归的实现</a></li><li><a href=#函数递归实例解析>函数递归实例解析</a><ul><li><a href=#字符串反转>字符串反转</a></li><li><a href=#斐波那契数列>斐波那契数列</a></li><li><a href=#汉诺塔>汉诺塔</a></li></ul></li><li><a href=#pyinstaller-库概述>PyInstaller 库概述</a></li></ul></li><li><a href=#测验-5>测验 5</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><script async src=/js/click.js></script><div id=poem_ip></div><script type=text/javascript>jinrishici.load(function(e){tags.innerHTML=e.data.matchTags})</script><div><span id=timeDate>载入年天数...</span><span id=times>载入时分秒...</span>
+<script async src=/js/duration.js></script></div><a href=https://www.foreverblog.cn/go.html target=_blank><img src=https://img.foreverblog.cn/wormhole_4_tp.gif alt style=display:inline-block;width:auto;height:32px title=穿梭虫洞-随机访问十年之约友链博客></a>
+<a href=https://www.travellings.cn/go.html target=_blank rel=noopener title=开往-友链接力><img src=https://www.travellings.cn/assets/logo.gif alt=开往-友链接力 style=display:inline-block;width:auto;height:32px></a>
+<a href=https://notbyai.fyi><img src=/images/Written-By-Human-Not-By-AI-Badge-white.svg alt="Written by Human, Not by AI" style=display:inline-block;width:auto;height:42px></a>
+<a href="https://ipw.cn/ipv6webcheck/?site=hui.ke" title=本站支持IPv6访问 target=_blank><img style=display:inline-block;vertical-align:middle alt=本站支持IPv6访问 src=https://static.ipw.cn/icon/ipv6-s1.svg></a><p class="text-sm text-tertiary-text"><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>本站总访问量 <span id=busuanzi_value_site_pv></span> 次
+&#183; 您是本站的第 <span id=busuanzi_value_site_uv></span> 个小伙伴</p><script async src=/js/tab.js></script><div id=cc-myssl-id style=position:fixed;right:0;bottom:0;width:65px;height:65px;z-index:99><a href="https://myssl.com/hui.ke?from=mysslid"><img src=https://static.myssl.com/res/images/myssl-id.png alt style=width:100%;height:100%></a></div><script type=text/javascript src=https://cdn.ywxi.net/js/1.js async></script></div></div></footer></body></html>

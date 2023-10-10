@@ -1,0 +1,295 @@
+<!doctype html><html lang=en dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>【第6周笔记】组合数据类型 | Python | Hui.Ke</title><meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=https://hui.ke/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=https://hui.ke/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script>
+<link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/vs.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/ini.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/json.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/sql.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/x86asm.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/xml.min.js crossorigin></script>
+<link rel=stylesheet href=https://hui.ke/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=https://lib.baomitu.com/font-awesome/6.4.2/js/all.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script>
+<link rel=icon type=image/png sizes=32x32 href=https://hui.ke/icon_hub7ca0b5404c6d576559b2bd22c64b0e5_2009_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=https://hui.ke/icon_hub7ca0b5404c6d576559b2bd22c64b0e5_2009_180x180_fill_box_center_3.png><meta name=description content="  课程笔记和选择题"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Docs","item":"https://hui.ke/docs/"},{"@type":"ListItem","position":2,"name":"Python","item":"https://hui.ke/docs/python/"},{"@type":"ListItem","position":3,"name":"【第6周笔记】组合数据类型","item":"https://hui.ke/docs/python/6/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://hui.ke/docs/python/6/"},"headline":"【第6周笔记】组合数据类型 | Python | Hui.Ke","datePublished":"2022-04-11T16:49:46+08:00","dateModified":"2022-04-20T20:30:46+08:00","wordCount":5629,"author":{"@type":"Person","name":"Hui.Ke"},"publisher":{"@type":"Person","name":"Hui.Ke","logo":{"@type":"ImageObject","url":"https://hui.ke/icon.png"}},"description":"\u003cp\u003e  课程笔记和选择题\u003c\/p\u003e"}</script><meta property="og:title" content="【第6周笔记】组合数据类型 | Python | Hui.Ke"><meta property="og:type" content="article"><meta property="og:image" content="https://hui.ke/icon.png"><meta property="og:url" content="https://hui.ke/docs/python/6/"><meta property="og:description" content="  课程笔记和选择题"><meta property="og:locale" content="en"><meta property="og:site_name" content="Hui.Ke"><meta property="article:published_time" content="2022-04-11T16:49:46+08:00"><meta property="article:modified_time" content="2022-04-20T20:30:46+08:00"><meta property="article:section" content="docs"><meta property="og:see_also" content="https://hui.ke/docs/python/20/"><meta property="og:see_also" content="https://hui.ke/docs/python/10/"><meta property="og:see_also" content="https://hui.ke/docs/python/19/"><meta property="og:see_also" content="https://hui.ke/docs/python/9/"><meta property="og:see_also" content="https://hui.ke/docs/python/18/"><meta property="og:see_also" content="https://hui.ke/docs/python/8/"><meta property="og:see_also" content="https://hui.ke/docs/python/17/"><meta property="og:see_also" content="https://hui.ke/docs/python/7/"><meta property="og:see_also" content="https://hui.ke/docs/python/16/"><meta property="og:see_also" content="https://hui.ke/docs/python/15/"><meta property="og:see_also" content="https://hui.ke/docs/python/5/"><meta property="og:see_also" content="https://hui.ke/docs/python/14/"><meta property="og:see_also" content="https://hui.ke/docs/python/4/"><meta property="og:see_also" content="https://hui.ke/docs/python/13/"><meta property="og:see_also" content="https://hui.ke/docs/python/3/"><meta property="og:see_also" content="https://hui.ke/docs/python/12/"><meta property="og:see_also" content="https://hui.ke/docs/python/2/"><meta property="og:see_also" content="https://hui.ke/docs/python/11/"><meta property="og:see_also" content="https://hui.ke/docs/python/1/"><script>!function(e){"use strict";!function(){var i,s=window,o=document,a=e,c="".concat("https:"===o.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=o.createElement("script"),r=o.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",a.d=n,i=function(){s.LA.ids.push(a)},s.LA?s.LA.ids&&i():(s.LA=e,s.LA.ids=[],i()),r.parentNode.insertBefore(n,r)}()}({id:"Jgb8aUbG5e3rqhrs",ck:"Jgb8aUbG5e3rqhrs",autoTrack:!0,hashMode:!0})</script><script>!function(e,t,n,s){var o=t.createElement("script"),i=t.getElementsByTagName("script")[0];o.type="text/javascript",o.crossorigin=!0,o.onload=function(){(new e[s].Monitor).init({id:"K9RugzpZqP1AhgMc",sendSuspicious:!0,sendSpaPv:!0})},i.parentNode.insertBefore(o,i),o.src=n}(window,document,"https://sdk.51.la/perf/js-sdk-perf.min.js","LingQue")</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268471087790880" crossorigin=anonymous></script><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">Hui.Ke</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/posts/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Posts</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">Docs</a>
+<a href=/categories/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Categories</a>
+<a href=/series/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Series</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Tags</a>
+<a href=/love/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Love</a>
+<a href=/about/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">About</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>Light</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>Dark</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>Auto</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>Table of Contents</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=https://hui.ke/docs/python/>Python</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/20/>期末测验</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/10/>【第9+周笔记】全课程总结与学习展望</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/19/>【第9周程序】计算生态纵览</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/9/>【第9周笔记】计算生态纵览</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/18/>【第8周程序】程序设计方法学</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/8/>【第8周笔记】程序设计方法学</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/17/>【第7周程序】文件和数据格式化</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/7/>【第7周笔记】文件和数据格式化</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/16/>【第6周程序】组合数据类型</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=https://hui.ke/docs/python/6/>【第6周笔记】组合数据类型</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/15/>【第5周程序】函数和代码复用</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/5/>【第5周笔记】函数和代码复用</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/14/>【第4周程序】程序的控制结构</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/4/>【第4周笔记】程序的控制结构</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/13/>【第3周程序】基本数据类型</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/3/>【第3周笔记】基本数据类型</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/12/>【第2周程序】Python 基本图形绘制</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/2/>【第2周笔记】Python 基本图形绘制</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/11/>【第1周程序】Python 基本语法元素</a></div></li><li class=py-2><div><a class=hover:text-eureka href=https://hui.ke/docs/python/1/>【第1周笔记】Python 基本语法元素</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>【第6周笔记】组合数据类型</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2022-04-11</span></div><div class="me-6 my-2"><i class="fa-solid fa-pen-to-square me-1"></i>
+<span>2022-04-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>12 min read</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=https://hui.ke/categories/it/ class=hover:text-eureka>IT</a></div><div class="me-6 my-2"><i class="fas fa-th-list me-1"></i>
+<a href=https://hui.ke/series/python/ class=hover:text-eureka>Python</a></div><div class="me-6 my-2"><i class="fa-solid fa-eye me-1"></i>
+<span id=busuanzi_value_page_pv><i class="fa fa-spinner fa-spin"></i></span> Hits</div></div><p>  课程笔记和选择题</p><h2 id=notes>notes</h2><h3 id=集合类型的定义>集合类型的定义</h3><p>  集合是多个元素的无序组合</p><p>  集合类型与数学中的集合概念一致</p><p>  集合元素之间无序，每个元素唯一，不存在相同元素</p><p>  集合元素不可更改，不能是可变数据类型 为什么？</p><p>  集合用大括号 {} 表示，元素间用逗号分隔</p><p>  建立集合类型用 {} 或 set()</p><p>  建立空集合类型，必须使用 set()</p><pre><code class=language-python># 举例
+&gt;&gt;&gt; A = {&quot;python&quot;, 123, (&quot;python&quot;,123)}     # 使用 {} 建立集合
+
+# 输出
+{123, 'python', ('python', 123)}
+
+# 举例
+&gt;&gt;&gt; B = set(&quot;pypy123&quot;)     # 使用 set() 建立集合
+
+# 输出
+{'1', 'p', '2', '3', 'y'}
+
+# 举例
+&gt;&gt;&gt; C = {&quot;python&quot;, 123, &quot;python&quot;,123}
+
+# 输出
+{'python', 123}
+</code></pre><h3 id=集合操作符>集合操作符</h3><table><thead><tr><th style=text-align:center>操作符及应用</th><th style=text-align:center>动作</th><th style=text-align:left>描述</th></tr></thead><tbody><tr><td style=text-align:center>S | T</td><td style=text-align:center>并</td><td style=text-align:left>返回一个新集合，包括在集合 S 和 T 中的所有元素</td></tr><tr><td style=text-align:center>S - T</td><td style=text-align:center>差</td><td style=text-align:left>返回一个新集合，包括在集合 S 但不在 T 中的元素</td></tr><tr><td style=text-align:center>S & T</td><td style=text-align:center>交</td><td style=text-align:left>返回一个新集合，包括同时在集合 S 和 T 中的元素</td></tr><tr><td style=text-align:center>S ^ T</td><td style=text-align:center>补</td><td style=text-align:left>返回一个新集合，包括集合 S 和 T 中的非相同元素</td></tr><tr><td style=text-align:center>S &lt;= T 或 S &lt; T</td><td style=text-align:center>返回 True/Fale</td><td style=text-align:left>判断 S 和 T 的子集关系</td></tr><tr><td style=text-align:center>S >= T 或 S > T</td><td style=text-align:center>返回 True/Fale</td><td style=text-align:left>判断 S 和 T 的包含关系</td></tr><tr><td style=text-align:center>S |= T</td><td style=text-align:center>并</td><td style=text-align:left>更新集合 S，包括在集合 S 和 T 中的所有元素</td></tr><tr><td style=text-align:center>S -= T</td><td style=text-align:center>差</td><td style=text-align:left>更新集合 S，包括在集合 S 但不在 T 中的元素</td></tr><tr><td style=text-align:center>S &= T</td><td style=text-align:center>交</td><td style=text-align:left>更新集合 S，包括同时在集合 S 和 T 中的元素</td></tr><tr><td style=text-align:center>S ^= T</td><td style=text-align:center>补</td><td style=text-align:left>更新集合 S，包括集合 S 和 T 中的非相同元素</td></tr></tbody></table><h3 id=集合处理方法>集合处理方法</h3><table><thead><tr><th style=text-align:center>操作函数或方法</th><th style=text-align:left>描述</th></tr></thead><tbody><tr><td style=text-align:center>S.add(x)</td><td style=text-align:left>如果 x 不在集合 S 中，将 x 增加到 S</td></tr><tr><td style=text-align:center>S.discard(x)</td><td style=text-align:left>移除 S 中元素 x，如果 x 不在集合 S 中，不报错</td></tr><tr><td style=text-align:center>S.remove(x)</td><td style=text-align:left>移除 S 中元素 x，如果 x 不在集合 S 中，产生 KeyError 异常</td></tr><tr><td style=text-align:center>S.clear()</td><td style=text-align:left>移除 S 中所有元素</td></tr><tr><td style=text-align:center>S.pop()</td><td style=text-align:left>随机返回 S 的一个元素，更新 S，若 S 为空产生 KeyError 异常</td></tr><tr><td style=text-align:center>S.copy()</td><td style=text-align:left>返回集合 S 的一个副本</td></tr><tr><td style=text-align:center>len(S)</td><td style=text-align:left>返回集合 S 的元素个数</td></tr><tr><td style=text-align:center>x in S</td><td style=text-align:left>判断 S 中元素 x，x 在集合 S 中，返回 True，否则返回 False</td></tr><tr><td style=text-align:center>x not in S</td><td style=text-align:left>判断 S 中元素 x，x 不在集合 S 中，返回 True，否则返回 False</td></tr><tr><td style=text-align:center>set(x)</td><td style=text-align:left>将其他类型变量 x 转变为集合类型</td></tr></tbody></table><h3 id=集合类型应用场景>集合类型应用场景</h3><p>  包含关系比较</p><pre><code class=language-python># 举例
+&gt;&gt;&gt; &quot;p&quot; in {&quot;p&quot;, &quot;y&quot; , 123}
+
+# 输出
+True
+
+# 举例
+&gt;&gt;&gt; {&quot;p&quot;, &quot;y&quot;} &gt;= {&quot;p&quot;, &quot;y&quot; , 123}
+
+# 输出
+False
+</code></pre><p>  数据去重：集合类型所有元素无重复</p><pre><code class=language-python># 举例
+&gt;&gt;&gt; ls = [&quot;p&quot;, &quot;p&quot;, &quot;y&quot;, &quot;y&quot;, 123]
+&gt;&gt;&gt; s = set(ls)     # 利用了集合无重复元素的特点
+
+# 输出
+{'p', 'y', 123}
+
+# 举例
+&gt;&gt;&gt; lt = list(s)     # 还可以将集合转换为列表
+
+# 输出
+['p', 'y', 123]
+
+</code></pre><h3 id=序列类型定义>序列类型定义</h3><p>  序列是具有先后关系的一组元素</p><p>  序列是一维元素向量，元素类型可以不同</p><p>  类似数学元素序列：$S_0, S_1, …, S_{n-1}$</p><p>  元素间由序号引导，通过下标访问序列的特定元素</p><p>  序列是一个基类类型</p><p>  序号的定义</p><table><thead><tr><th style=text-align:center>反向递减序号</th><th style=text-align:center>-5</th><th style=text-align:center>-4</th><th style=text-align:center>-3</th><th style=text-align:center>-2</th><th style=text-align:center>-1</th></tr></thead><tbody><tr><td style=text-align:center>举例</td><td style=text-align:center>&ldquo;BIT&rdquo;</td><td style=text-align:center>3.1415</td><td style=text-align:center>1024</td><td style=text-align:center>(2,3)</td><td style=text-align:center>[&ldquo;中国&rdquo;,9]</td></tr><tr><td style=text-align:center>正向递增序号</td><td style=text-align:center>0</td><td style=text-align:center>1</td><td style=text-align:center>2</td><td style=text-align:center>3</td><td style=text-align:center>4</td></tr></tbody></table><h3 id=序列类型通用操作符>序列类型通用操作符</h3><table><thead><tr><th style=text-align:center>操作符及应用</th><th style=text-align:left>描述</th></tr></thead><tbody><tr><td style=text-align:center>x in s</td><td style=text-align:left>如果 x 是序列 s 的元素，返回 True，否则返回 False</td></tr><tr><td style=text-align:center>x not in s</td><td style=text-align:left>如果 x 是序列 s 的元素，返回 False，否则返回 True</td></tr><tr><td style=text-align:center>s + t</td><td style=text-align:left>连接两个序列 s 和 t</td></tr><tr><td style=text-align:center>s<em>n 或 n</em>s</td><td style=text-align:left>将序列 s 复制 n 次</td></tr><tr><td style=text-align:center>s[i]</td><td style=text-align:left>索引，返回 s 中的第 i 个元素，i 是序列的序号</td></tr><tr><td style=text-align:center>s[i: j] 或 s[i: j: k]</td><td style=text-align:left>切片，返回序列 s 中第 i 到 j 以 k 为步长的元素子序列</td></tr></tbody></table><p>  序列类型操作实例</p><pre><code class=language-python># 举例
+&gt;&gt;&gt; ls = [&quot;python&quot;, 123, &quot;.io&quot;]
+&gt;&gt;&gt; ls [::-1]
+
+# 输出
+['.io', 123, 'python']
+
+# 举例
+&gt;&gt;&gt; s = &quot;python123.io&quot;
+&gt;&gt;&gt; s[::-1]
+
+# 输出
+'oi.321nohtyp'
+</code></pre><h3 id=序列类型通用函数和方法>序列类型通用函数和方法</h3><table><thead><tr><th style=text-align:center>函数和方法</th><th style=text-align:left>描述</th></tr></thead><tbody><tr><td style=text-align:center>len(s)</td><td style=text-align:left>返回序列 s 的长度，即元素个数</td></tr><tr><td style=text-align:center>min(s)</td><td style=text-align:left>返回序列 s 的最小元素，s 中元素需要可比较</td></tr><tr><td style=text-align:center>max(s)</td><td style=text-align:left>返回序列 s 的最大元素，s 中元素需要可比较</td></tr><tr><td style=text-align:center>s.index(x) 或 s.index(x, i, j)</td><td style=text-align:left>返回序列 s 从 i 开始到 j 位置中第一次出现元素 x 的位置</td></tr><tr><td style=text-align:center>s.count(x)</td><td style=text-align:left>返回序列 s 中出现 x 的总次数</td></tr></tbody></table><p>  序列类型操作实例</p><pre><code class=language-python># 举例
+&gt;&gt;&gt; ls = [&quot;python&quot;, 123, &quot;.io&quot;]
+&gt;&gt;&gt; len(ls)
+
+# 输出
+3
+
+# 举例
+&gt;&gt;&gt; s = &quot;python123.io&quot;
+&gt;&gt;&gt; max(s)
+
+# 输出
+'y'
+</code></pre><h3 id=元组类型定义>元组类型定义</h3><p>  元组是序列类型的一种扩展</p><p>  元组是一种序列类型，一旦创建就不能被修改</p><p>  使用小括号 () 或 tuple() 创建，元素间用逗号 , 分隔</p><p>  可以使用或不适用小括号</p><pre><code class=language-python># 举例
+&gt;&gt;&gt; creature = &quot;cat&quot;, &quot;dog&quot;, &quot;tiger&quot;, &quot;human&quot;
+&gt;&gt;&gt; creature
+
+# 输出
+('cat', 'dog', 'tiger', 'human')
+
+# 举例
+&gt;&gt;&gt; color = (0x001100, &quot;blue&quot;, creature)
+&gt;&gt;&gt; color
+
+# 输出
+(4352, 'blue', ('cat', 'dog', 'tiger', 'human'))
+</code></pre><h3 id=元组类型操作>元组类型操作</h3><p>  元组继承序列类型的全部通用操作</p><p>  元组因为创建后不能修改，因此没有特殊操作</p><p>  使用或不适用小括号</p><pre><code class=language-python># 举例
+&gt;&gt;&gt; creature = &quot;cat&quot;, &quot;dog&quot;, &quot;tiger&quot;, &quot;human&quot;
+&gt;&gt;&gt; creature[::-1]
+
+# 输出
+('human', 'tiger', 'dog', 'cat')
+
+# 举例
+&gt;&gt;&gt; color = (0x001100, &quot;blue&quot;, creature)
+&gt;&gt;&gt; color[-1][2]
+
+# 输出
+'tiger'
+</code></pre><h3 id=列表类型定义>列表类型定义</h3><p>  列表是序列类型的一种扩展，十分常用</p><p>  列表是一种序列类型，创建后可以随意被修改</p><p>  使用方括号 [] 或 list() 创建，元素间用逗号 , 分割</p><p>  列表中各元素类型可以不同，无长度限制</p><pre><code class=language-python># 举例
+&gt;&gt;&gt; ls = [&quot;cat&quot;, &quot;dog&quot;, &quot;tiger&quot;, 1024]
+&gt;&gt;&gt; ls
+
+# 输出
+['cat', 'dog', 'tiger', 1024]
+
+# 举例
+&gt;&gt;&gt; lt = ls
+&gt;&gt;&gt; lt
+
+# 输出
+['cat', 'dog', 'tiger', 1024]
+
+# 方括号 [] 真正创建一个列表，赋值仅传递引用
+</code></pre><h3 id=列表类型操作函数和方法>列表类型操作函数和方法</h3><table><thead><tr><th style=text-align:center>函数或方法</th><th style=text-align:left>描述</th></tr></thead><tbody><tr><td style=text-align:center>ls[i] = x</td><td style=text-align:left>替换列表 ls 第 i 元素为 x</td></tr><tr><td style=text-align:center>ls[i: j: k] = lt</td><td style=text-align:left>用列表 lt 替换 ls 切片后所对应元素子列表</td></tr><tr><td style=text-align:center>del ls[i]</td><td style=text-align:left>删除列表 ls 中第 i 元素</td></tr><tr><td style=text-align:center>del ls[i: j: k]</td><td style=text-align:left>删除列表 ls 中第 i 到第 j 以 k 为步长的元素</td></tr><tr><td style=text-align:center>ls += lt</td><td style=text-align:left>更新列表 ls，将列表 lt 元素增加到列表 ls 中</td></tr><tr><td style=text-align:center>ls *= n</td><td style=text-align:left>更新列表 ls，其元素重复 n 次</td></tr><tr><td style=text-align:center>ls.append(x)</td><td style=text-align:left>在列表 ls 最后增加一个元素 x</td></tr><tr><td style=text-align:center>ls.clear()</td><td style=text-align:left>删除列表 ls 中所有元素</td></tr><tr><td style=text-align:center>ls.copy()</td><td style=text-align:left>生成一个新列表，赋值 ls 中所有元素</td></tr><tr><td style=text-align:center>ls.insert(i,x)</td><td style=text-align:left>在列表 ls 的第 i 位置增加元素 x</td></tr><tr><td style=text-align:center>ls.pop(i)</td><td style=text-align:left>将列表 ls 中第 i 位置元素取出并删除该元素</td></tr><tr><td style=text-align:center>ls.remove(x)</td><td style=text-align:left>将列表 ls 中出现的第一个元素 x 删除</td></tr><tr><td style=text-align:center>ls.reverse()</td><td style=text-align:left>将列表 ls 中的元素反转</td></tr></tbody></table><pre><code class=language-python># 举例
+&gt;&gt;&gt; ls = [&quot;cat&quot;, &quot;dog&quot;, &quot;tiger&quot;, 1024]
+&gt;&gt;&gt; ls[1:2] = [1, 2, 3, 4]
+
+# 输出
+['cat', 1, 2, 3, 4, 'tiger', 1024]
+
+# 举例
+&gt;&gt;&gt; del ls[::3]
+
+# 输出
+[1, 2, 4, 'tiger']
+
+# 举例
+&gt;&gt;&gt; ls*2
+
+# 输出
+[1, 2, 4, 'tiger', 1, 2, 4, 'tiger']
+
+# 举例
+&gt;&gt;&gt; ls = [&quot;cat&quot;, &quot;dog&quot;, &quot;tiger&quot;, 1024]
+&gt;&gt;&gt; ls.append(1234)
+
+# 输出
+['cat', 'dog', 'tiger', 1024, 1234]
+
+# 举例
+&gt;&gt;&gt; ls.insert(3, &quot;human&quot;)
+
+# 输出
+['cat', 'dog', 'tiger', 'human', 1024, 1234]
+
+# 举例
+&gt;&gt;&gt; ls.reverse()
+
+# 输出
+[1234, 1024, 'human', 'tiger', 'dog', 'cat']
+</code></pre><h3 id=列表功能>列表功能</h3><pre><code class=language-python>lt = []     # 定义空列表 lt
+lt += [1,2,3,4,5]     # 向 lt 新增 5 个元素
+lt[2] = 6     # 修改 lt 中第 2 个元素
+lt.insert(2,7)     # 向 lt 中第 2 个位置增加一个元素
+del lt[1]     # 从 lt 中第 1 个位置删除一个元素
+del lt[1:4]     # 删除 lt 中第 1-3 位置元素
+0 in lt     # 判断 lt 中是否包含数字 0
+lt.append(0)     # 向 lt 新增数字 0
+lt.index(0)     # 返回数字 0 所在 lt 中的索引
+len(lt)     # lt 的长度
+max(lt)     # lt 中最大元素
+lt.clear()     # 清空 lt
+</code></pre><h3 id=序列类型应用场景>序列类型应用场景</h3><p>  数据表示：元组和列表</p><p>  元组用于元素不改变的应用场景，更多用于固定搭配场景</p><p>  列表更加灵活，它是最常用的序列类型</p><p>  最主要作用：表示一组有序数据，进而操作它们</p><h4 id=元素遍历>元素遍历</h4><pre><code class=language-python>for item in ls :
+    &lt;语句块&gt;
+for item in tp :
+    &lt;语句块&gt;
+</code></pre><h4 id=数据保护>数据保护</h4><p>  如果不希望数据被程序所改变，转换成元组类型</p><pre><code class=language-python># 举例
+&gt;&gt;&gt; ls = [&quot;cat&quot;, &quot;dog&quot;, &quot;tiger&quot;, 1024]
+&gt;&gt;&gt; lt = tuple(ls)
+&gt;&gt;&gt; lt
+
+# 输出
+('cat', 'dog', 'tiger', 1024)
+</code></pre><h3 id=字典类型定义>字典类型定义</h3><p>  映射是一种键（索引）和值（数据）的对应</p><p>  序列类型由 0…N 整数作为数据的默认索引，映射类型则由用户为数据定义索引</p><p>  字典类型是“映射”的体现</p><p>  键值对：键是数据索引的扩展</p><p>  字典是键值对的集合，键值对之间无序</p><p>  采用大括号 {} 和 dict() 创建，键值对用冒号 : 表示</p><pre><code class=language-python>{&lt;键1&gt;:&lt;值1&gt;, &lt;键2&gt;:&lt;值2&gt;, … , &lt;键n&gt;:&lt;值n&gt;}
+</code></pre><h3 id=字典类型的用法>字典类型的用法</h3><p>  在字典变量中，通过键获得值</p><pre><code class=language-python>&lt;字典变量&gt; = {&lt;键1&gt;:&lt;值1&gt;, … , &lt;键n&gt;:&lt;值n&gt;}
+&lt;值&gt; = &lt;字典变量&gt;[&lt;键&gt;]
+&lt;字典变量&gt;[&lt;键&gt;] = &lt;值&gt;
+
+# 举例
+&gt;&gt;&gt; d = {&quot;中国&quot;:&quot;北京&quot;, &quot;美国&quot;:&quot;华盛顿&quot;, &quot;法国&quot;:&quot;巴黎&quot;}
+&gt;&gt;&gt; d
+
+# 输出
+{'中国': '北京', '美国': '华盛顿', '法国': '巴黎'}
+
+# 举例
+&gt;&gt;&gt; d[&quot;中国&quot;]
+
+# 输出
+'北京'
+
+# 举例
+&gt;&gt;&gt; de = {} ; type(de)     # type(x) 返回变量 x 的类型
+
+# 输出
+&lt;class 'dict'&gt;
+</code></pre><h3 id=字典类型操作函数和方法>字典类型操作函数和方法</h3><table><thead><tr><th style=text-align:center>函数或方法</th><th style=text-align:left>描述</th></tr></thead><tbody><tr><td style=text-align:center>del d[k]</td><td style=text-align:left>删除字典 d 中键 k 对应的数据值</td></tr><tr><td style=text-align:center>k in d</td><td style=text-align:left>判断键 k 是否在字典 d 中，如果在返回 True，否则 False</td></tr><tr><td style=text-align:center>d.keys()</td><td style=text-align:left>返回字典 d 中所有的键信息</td></tr><tr><td style=text-align:center>d.values()</td><td style=text-align:left>返回字典 d 中所有的值信息</td></tr><tr><td style=text-align:center>d.items</td><td style=text-align:left>返回字典 d 中所有的键值对信息</td></tr><tr><td style=text-align:center>d.get(k, <default>)</td><td style=text-align:left>键 K 存在，则返回相应值，不在则返回<default>值</td></tr><tr><td style=text-align:center>d.pop(d, <default>)</td><td style=text-align:left>键 k 存在，则取出相应值，不在则返回<default>值</td></tr><tr><td style=text-align:center>d.popitem()</td><td style=text-align:left>随机从字典 d 中取出一个键值对，以元组形式返回</td></tr><tr><td style=text-align:center>d.clear()</td><td style=text-align:left>删除所有的键值对</td></tr><tr><td style=text-align:center>len(d)</td><td style=text-align:left>返回字典 d 中元素的个数</td></tr></tbody></table><pre><code class=language-python># 举例
+&gt;&gt;&gt; d = {&quot;中国&quot;:&quot;北京&quot;, &quot;美国&quot;:&quot;华盛顿&quot;, &quot;法国&quot;:&quot;巴黎&quot;}
+&gt;&gt;&gt; &quot;中国&quot; in d
+
+# 输出
+True
+
+# 举例
+&gt;&gt;&gt; d.keys()
+
+# 输出
+dict_keys(['中国', '美国', '法国'])
+
+# 举例
+&gt;&gt;&gt; d.values()
+
+# 输出
+dict_values(['北京', '华盛顿', '巴黎'])
+
+# 举例
+&gt;&gt;&gt; d ={&quot;中国&quot;:&quot;北京&quot;, &quot;美国&quot;:&quot;华盛顿&quot;, &quot;法国&quot;:&quot;巴黎&quot;}
+&gt;&gt;&gt; d.get(&quot;中国&quot;,&quot;伊斯兰堡&quot;)
+
+# 输出
+'北京'
+
+# 举例
+&gt;&gt;&gt; d.get(&quot;巴基斯坦&quot;,&quot;伊斯兰堡&quot;)
+
+# 输出
+'伊斯兰堡'
+
+# 举例
+&gt;&gt;&gt; d.popitem()
+
+# 输出
+('美国', '华盛顿')
+
+d = {}     # 定义空字典 d
+d[&quot;a&quot;] = 1; d[&quot;b&quot;] = 2     # 向 d 新增 2 个键值对元素
+d[&quot;b&quot;] = 3     # 修改第 2 个元素
+&quot;c&quot; in d     # 判断字符 &quot;c&quot; 是否是 d 的键
+len(d)     # 计算 d 的长度
+d.clear()     # 清空 d
+</code></pre><h3 id=字典类型应用场景>字典类型应用场景</h3><p>  映射的表达：映射无处不在，键值对无处不在</p><p>  例如：统计数据出现的次数，数据是键，次数是值</p><p>  最主要作用：表达键值对数据，进而操作它们</p><pre><code class=language-python>for k in d :     # 元素遍历
+    &lt;语句块&gt;
+</code></pre><h3 id=jieba-库概述>jieba 库概述</h3><p>jieba 是优秀的中文分词第三方库</p><p>中文文本需要通过分词获得单个的词语</p><p>jieba 是优秀的中文分词第三方库，需要额外安装</p><p>jieba 库提供三种分词模式，最简单只需掌握一个函数</p><pre><code class=language-python>pip install jieba     # 安装 jieba 库
+</code></pre><h3 id=jieba-分词的原理>jieba 分词的原理</h3><p>  jieba 分词依靠中文词库</p><p>  利用一个中文词库，确定中文字符之间的关联概率</p><p>  中文字符间概率大的组成词组，形成分词结果</p><p>  除了分词，用户还可以添加自定义的词组</p><h3 id=jieba-分词的三种模式>jieba 分词的三种模式</h3><ol><li>精确模式：把文本精确的切分开，不存在冗余单词</li><li>全模式：把文本中所有可能的词语都扫描出来，有冗余</li><li>搜索引擎模式：在精确模式基础上，对长词再次切分</li></ol><h3 id=jieba-库常用函数>jieba 库常用函数</h3><table><thead><tr><th style=text-align:center>函数</th><th style=text-align:left>描述</th><th style=text-align:left>举例</th><th style=text-align:left>结果</th></tr></thead><tbody><tr><td style=text-align:center>jieba.lcut(s)</td><td style=text-align:left>精确模式，返回一个列表类型的分词结果</td><td style=text-align:left>jieba.lcut(&ldquo;中国是一个伟大的国家&rdquo;)</td><td style=text-align:left>[&lsquo;中国&rsquo;, &lsquo;是&rsquo;, &lsquo;一个&rsquo;, &lsquo;伟大&rsquo;, &lsquo;的&rsquo;, &lsquo;国家&rsquo;]</td></tr><tr><td style=text-align:center>jieba.lcut(s,cut_all=True)</td><td style=text-align:left>全模式，返回一个列表类型的分词结果，存在冗余</td><td style=text-align:left>jieba.lcut(&ldquo;中国是一个伟大的国家&rdquo;,cut_all=True)</td><td style=text-align:left>[&lsquo;中国&rsquo;, &lsquo;国是&rsquo;, &lsquo;一个&rsquo;, &lsquo;伟大&rsquo;, &lsquo;的&rsquo;, &lsquo;国家&rsquo;]</td></tr><tr><td style=text-align:center>jieba.lcut_for_search(s)</td><td style=text-align:left>搜索引擎模式，返回一个列表类型的分词结果，存在冗余</td><td style=text-align:left>jieba.lcut_for_search(&ldquo;中华人民共和国是伟大的&rdquo;)</td><td style=text-align:left>[&lsquo;中华&rsquo;, &lsquo;华人&rsquo;, &lsquo;人民&rsquo;, &lsquo;共和&rsquo;, &lsquo;共和国&rsquo;, &lsquo;中华人民共和国&rsquo;, &lsquo;是&rsquo;, &lsquo;伟大&rsquo;, &lsquo;的&rsquo;]</td></tr><tr><td style=text-align:center>jieba.add_word(w)</td><td style=text-align:left>向分词词典增加新词 w</td><td style=text-align:left>jieba.add_word(&ldquo;蟒蛇语言&rdquo;)</td><td></td></tr></tbody></table><h2 id=测验-6>测验 6</h2><ol><li>那个选项是下面代码的输出结果？C</li></ol><pre><code class=language-python>d= {'a' : 1, 'b' : 2, 'b' : '3'}
+print(d['b'])
+</code></pre><pre><code>A. {'b':2}
+
+B. 2
+
+C. 3
+
+D. 1
+</code></pre><ul><li>创建字典时，如果相同键对应不同值，字典采用最后（最新）一个“键值对”。</li></ul><ol start=2><li><p>关于大括号 {}，以下描述正确的是：B</p><p>A. 直接使用 {} 将生成一个元组类型</p><p>B. 直接使用 {} 将生成一个字典类型</p><p>C. 直接使用 {} 将生成一个集合类型</p><p>D. 直接使用 {} 将生成一个列表类型</p></li></ol><ul><li><p>集合类型和字典类型最外侧都用 {} 表示，不同在于，集合类型元素是普通元素，字典类型元素是键值对。</p></li><li><p>字典在程序设计中非常常用，因此，直接采用{}默认生成一个空字典。</p></li></ul><ol start=3><li><p>以下不是 Python 序列类型的是：B</p><p>A. 列表类型</p><p>B. 数组类型</p><p>C. 字符串类型</p><p>D. 元组类型</p></li></ol><ul><li>Python 内置数据类型中没有数组类型。</li></ul><ol start=4><li><p>关于 Python 的元组类型，以下选项错误的是：D</p><p>A. 一个元组可以作为另一个元组的元素，可以采用多级索引获取信息</p><p>B. 元组采用逗号和圆括号（可选）来表示</p><p>C. 元组一旦创建就不能被修改</p><p>D. 元组中元素必须是相同类型</p></li></ol><ul><li>序列类型（元组、列表）中元素都可以是不同类型。</li></ul><ol start=5><li><p>给定字典 d，哪个选项对 d.values() 的描述是正确的？B</p><p>A. 返回一个集合类型，包括字典 d 中所有值</p><p>B. 返回一种 dict_values 类型，包括字典 d 中所有值</p><p>C. 返回一个元组类型，包括字典 d 中所有值</p><p>D. 返回一个列表类型，包括字典 d 中所有值</p></li></ol><ul><li>运行如下代码：（其中d是一个预定义的字典）</li></ul><pre><code class=language-python>d={&quot;a&quot;:1, &quot;b&quot;:2}
+type(d.values())
+</code></pre><ul><li><p>输出结果是：&lt;class &lsquo;dict_values&rsquo;></p></li><li><p>d.values() 返回的是 dict_values 类型，这个类型通常与 for..in 组合使用。</p></li></ul><ol start=6><li><p>关于 Python 组合数据类型，以下描述错误的是：C</p><p>A. Python 的字符串、元组和列表类型都属于序列类型</p><p>B. 组合数据类型能够将多个相同类型或不同类型的数据组织起来，通过单一的表示使数据操作更有序、更容易</p><p>C. 序列类型是二维元素向量，元素之间存在先后关系，通过序号访问</p><p>D. 组合数据类型可以分为3类：序列类型、集合类型和映射类型</p></li></ol><ul><li>序列类型总体上可以看成一维向量，如果其元素都是序列，则可被当作二维向量。</li></ul><ol start=7><li><p>序列 s，哪个选项对 s.index(x) 的描述是正确的？A</p><p>A. 返回序列 s 中元素 x 第一次出现的序号</p><p>B. 返回序列 s 中元素 x 所有出现位置的序号</p><p>C. 返回序列 s 中 x 的长度</p><p>D. 返回序列 s 中序号为 x 的元素</p></li></ol><ul><li>注意：s.index(x) 返回第一次出现 x 的序号，并不返回全部序号。</li></ul><ol start=8><li><p>给定字典 d，哪个选项对 x in d 的描述是正确的？D</p><p>A. x 是一个二元元组，判断 x 是否是字典 d 中的键值对</p><p>B. 判断 x 是否是字典 d 中的值</p><p>C. 判断 x 是否是在字典 d 中以键或值方式存在</p><p>D. 判断 x 是否是字典 d 中的键</p></li></ol><ul><li><p>键是值的序号，也是字典中值的索引方式。</p></li><li><p>因此，x in d 中的 x 被当作 d 中的序号进行判断。</p></li></ul><ol start=9><li><p>列表 ls，哪个选项对 ls.append(x) 的描述是正确的？A</p><p>A. 只能向列表 ls 最后增加一个元素 x</p><p>B. 向列表 ls 最前面增加一个元素 x</p><p>C. 向 ls 中增加元素，如果 x 是一个列表，则可以同时增加多个元素</p><p>D. 替换列表 ls 最后一个元素为 x</p></li></ol><ul><li>ls.append(x)，如果 x 是一个列表，则该列表作为一个元素增加的 ls 中。</li></ul><ol start=10><li><p>S 和 T 是两个集合，哪个选项对 S^T 的描述是正确的？C</p><p>A. S 和 T 的差运算，包括在集合 S 但不在 T 中的元素</p><p>B. S 和 T 的交运算，包括同时在集合 S 和 T 中的元素</p><p>C. S 和 T 的补运算，包括集合 S 和 T 中的非相同元素</p><p>D. S 和 T 的并运算，包括在集合 S 和 T 中的所有元素</p></li></ol><ul><li>集合“交并差补”四种运算分别对应的运算符是：& | - ^</li></ul></article><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=https://hui.ke/authors/hui.ke/ class="md:me-4 text-primary-text h-24 w-24"><img src=https://hui.ke/bagua.webp class="bg-primary-bg w-full rounded-full" alt=Avatar></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=https://hui.ke/authors/hui.ke/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>Hui.Ke</h3></a><span class="block pb-2">❤ Cyber Security | Safety is a priority.</span>
+<a href=mailto:3199731997@qq.com class=me-2><i class="fas fa-envelope"></i></a>
+<a href="https://wpa.qq.com/msgrd?v=3&amp;uin=3199731997" class=me-2><i class="fab fa-qq"></i></a>
+<a href=/images/anquanyunying.webp class=me-2><i class="fab fa-weixin"></i></a></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">Previous</span>
+<a href=https://hui.ke/docs/python/16/ class=block>【第6周程序】组合数据类型</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">Next</span>
+<a href=https://hui.ke/docs/python/15/ class=block>【第5周程序】函数和代码复用</a></div></div><div id=valine-comments class=mt-4></div><script defer src=https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js integrity=sha384-e0+DNUCJo75aOAzHQbFWYBCM9/S4f0BhRJXvEgbE3mMS85RM20MSSGStHuNdY2QK crossorigin></script>
+<script>document.addEventListener("DOMContentLoaded",function(){new Valine({el:"#valine-comments",appId:"BQnVqWIiq78AdqwyhvBVAa3y-MdYXbMMI",appKey:"RKg5By312YjM8rU6WkkfK9IN",recordIP:"true",serverURLs:"https://l.hui.ke",visitor:"true"})})</script></div><div class="hidden lg:block lg:w-1/4"><div class="bg-secondary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>On This Page</h3></div><div class="sticky-toc
+border-s
+hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#notes>notes</a><ul><li><a href=#集合类型的定义>集合类型的定义</a></li><li><a href=#集合操作符>集合操作符</a></li><li><a href=#集合处理方法>集合处理方法</a></li><li><a href=#集合类型应用场景>集合类型应用场景</a></li><li><a href=#序列类型定义>序列类型定义</a></li><li><a href=#序列类型通用操作符>序列类型通用操作符</a></li><li><a href=#序列类型通用函数和方法>序列类型通用函数和方法</a></li><li><a href=#元组类型定义>元组类型定义</a></li><li><a href=#元组类型操作>元组类型操作</a></li><li><a href=#列表类型定义>列表类型定义</a></li><li><a href=#列表类型操作函数和方法>列表类型操作函数和方法</a></li><li><a href=#列表功能>列表功能</a></li><li><a href=#序列类型应用场景>序列类型应用场景</a><ul><li><a href=#元素遍历>元素遍历</a></li><li><a href=#数据保护>数据保护</a></li></ul></li><li><a href=#字典类型定义>字典类型定义</a></li><li><a href=#字典类型的用法>字典类型的用法</a></li><li><a href=#字典类型操作函数和方法>字典类型操作函数和方法</a></li><li><a href=#字典类型应用场景>字典类型应用场景</a></li><li><a href=#jieba-库概述>jieba 库概述</a></li><li><a href=#jieba-分词的原理>jieba 分词的原理</a></li><li><a href=#jieba-分词的三种模式>jieba 分词的三种模式</a></li><li><a href=#jieba-库常用函数>jieba 库常用函数</a></li></ul></li><li><a href=#测验-6>测验 6</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><script async src=/js/click.js></script><div id=poem_ip></div><script type=text/javascript>jinrishici.load(function(e){tags.innerHTML=e.data.matchTags})</script><div><span id=timeDate>载入年天数...</span><span id=times>载入时分秒...</span>
+<script async src=/js/duration.js></script></div><a href=https://www.foreverblog.cn/go.html target=_blank><img src=https://img.foreverblog.cn/wormhole_4_tp.gif alt style=display:inline-block;width:auto;height:32px title=穿梭虫洞-随机访问十年之约友链博客></a>
+<a href=https://www.travellings.cn/go.html target=_blank rel=noopener title=开往-友链接力><img src=https://www.travellings.cn/assets/logo.gif alt=开往-友链接力 style=display:inline-block;width:auto;height:32px></a>
+<a href=https://notbyai.fyi><img src=/images/Written-By-Human-Not-By-AI-Badge-white.svg alt="Written by Human, Not by AI" style=display:inline-block;width:auto;height:42px></a>
+<a href="https://ipw.cn/ipv6webcheck/?site=hui.ke" title=本站支持IPv6访问 target=_blank><img style=display:inline-block;vertical-align:middle alt=本站支持IPv6访问 src=https://static.ipw.cn/icon/ipv6-s1.svg></a><p class="text-sm text-tertiary-text"><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>本站总访问量 <span id=busuanzi_value_site_pv></span> 次
+&#183; 您是本站的第 <span id=busuanzi_value_site_uv></span> 个小伙伴</p><script async src=/js/tab.js></script><div id=cc-myssl-id style=position:fixed;right:0;bottom:0;width:65px;height:65px;z-index:99><a href="https://myssl.com/hui.ke?from=mysslid"><img src=https://static.myssl.com/res/images/myssl-id.png alt style=width:100%;height:100%></a></div><script type=text/javascript src=https://cdn.ywxi.net/js/1.js async></script></div></div></footer></body></html>
